@@ -69,3 +69,6 @@ wget $modURL
 echo "Download complete. Extracting and copying files..."
 
 tar -xzvf *.tar.gz
+
+#removes archive when finished
+rm *.tar.gz
