@@ -19,8 +19,9 @@ cd waw-zombies-mod-dl
 ```
 
 ## TODO
-Add ability to use zip files
-Let users choose from a few themed premade map packs
+* Add ability to use zip files
+* Let users choose from a few themed premade map packs
+* Add more content to the "usage" section of the readme
 
 ## FAQ
 
