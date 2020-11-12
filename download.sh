@@ -58,11 +58,13 @@ echo "Enter the url to the archive containg the mod folders you wish to install:
 #stores url to mod archive variable
 read modURL
 
-cd modPath
+#always quote var dereferences otherwise the shell confused the spaces in the vars value as spaces seperating multiple values
+cd "$modPath"
 
 echo "Downloading files please wait..."
 
-wget modURL
+#always quote var dereferences otherwise the shell confused the spaces in the vars value as spaces seperating multiple values
+wget $modURL
 
 echo "Download complete. Extracting and copying files..."
 
