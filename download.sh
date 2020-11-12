@@ -15,6 +15,10 @@ read modURL
 
 cd modPath
 
+echo "Downloading files please wait..."
+
 wget modURL
+
+echo "Download complete. Extracting and copying files..."
 
 tar -xzvf *.tar.gz
