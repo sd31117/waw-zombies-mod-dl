@@ -22,8 +22,7 @@ cd waw-zombies-mod-dl
 * Add ability to use zip files
 * Let users choose from a few themed premade map packs
 * Add more content to the "usage" section of the readme
-* fix program complete message on line 97
-* fix removal of archives when done (not working)
+
 
 ## FAQ
 
