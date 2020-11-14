@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Authors: sd31117 and mshriver2
+
 #prints splash ascii
 echo "WC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1Y
 LVgtWC1YLVgtWC1YLVgtWC1YLVgKfCAgICAgICAgICAgICAgICAgICAgICAgICAgICwsJ2BgYGBg
@@ -46,14 +48,19 @@ LVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgK" | base64 -d
 printf "\n"
 
 #collects user input
-printf "### Welcome to the Linux COD Zombies WAW Custom Map Downloader! ###\n\n"
+printf "### Welcome to the Linux COD Zombies WAW Custom Map Downloader! \e[32m v1.0.0\e[0m ###\n\n"
 
 printf "Please enter the path to your waw mods folder dir [press enter for default]: \n\n"
 
 #stores cod mod folder path
 read modPath
 
-echo "Enter the url to the archive containg the mod folders you wish to install: "
+printf "Please enter a number to select your mod archive type | [1: zip] or [2: tar.gz]: \n"
+
+#stores file extension type
+read fileType
+
+printf "Enter the url to the archive containg the mod folders you wish to install: \n"
 
 #stores url to mod archive variable
 read modURL
@@ -61,14 +68,30 @@ read modURL
 #always quote var dereferences otherwise the shell confused the spaces in the vars value as spaces seperating multiple values
 cd "$modPath"
 
-echo "Downloading files please wait..."
+printf "Downloading files please wait...\n"
 
 #always quote var dereferences otherwise the shell confused the spaces in the vars value as spaces seperating multiple values
 wget $modURL
 
-echo "Download complete. Extracting and copying files..."
+printf "Download complete. Extracting and copying files...\n"
 
-tar -xzvf *.tar.gz
+#checks to see which filetype the user used and then extracts the archive 
+case $fileType in
 
-#removes archive when finished
-rm *.tar.gz
+    1)
+        unzip -a *.zip 
+
+        #removes zip archive when finished
+        rm *.zip   
+        ;;
+
+    2)
+        tar -xzvf *.tar.gz
+
+        #removes tar.gz archive when finished
+        rm *.tar.gz
+        ;;
+
+
+
+printf "Your mods were installed successfully! Thank you for using waw-zombies-mod-dl!"
