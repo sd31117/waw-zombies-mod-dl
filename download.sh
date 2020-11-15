@@ -47,13 +47,22 @@ LVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgtWC1YLVgK" | base64 -d
 #printf is needed to print newlines 
 printf "\n"
 
-#collects user input
+# greets user and collects input
 printf "### Welcome to the Linux COD Zombies WAW Custom Map Downloader! \e[32mv1.0.0\e[0m ###\n\n"
 
 printf "\e[36mPlease enter the path to your waw mods folder dir [press enter for default]: \e[0m\n\n"
 
 #stores cod mod folder path
 read modPath
+
+# sets default modpath if not given input by the user
+if modPath
+then 
+    modPath = modPath
+else
+    modPath = "~/.steam/steam/steamapps/compatdata/10090/pfx/drive_c/users/steamuser/Local Settings/Application Data/Activision/CoDWaW/mods/"
+fi
+
 
 printf "\e[36mPlease enter a number to select your mod archive type | [1: zip] or [2: tar.gz]: \e[0m\n"
 
@@ -65,7 +74,6 @@ printf "\e[36mEnter the url to the archive containg the mod folders you wish to 
 #stores url to mod archive variable
 read modURL
 
-#always quote var dereferences otherwise the shell confused the spaces in the vars value as spaces seperating multiple values
 cd "$modPath"
 
 printf "\e[36mDownloading files please wait...\e[0m\n"
