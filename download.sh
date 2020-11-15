@@ -20,10 +20,10 @@ read modPath
 if [ -z "$modPath" ]
     then
         modPath="~/.steam/steam/steamapps/compatdata/10090/pfx/drive_c/users/steamuser/Local Settings/Application Data/Activision/CoDWaW/mods/"
-        printf "No Directory Set. Using Default\n$modPath\n"
+        printf "\e[36mNo Directory Set. Using Default\n\e[39m$modPath\n"
     else
         modPath=$modPath
-        printf "Directory Set!\n$modPath\n"
+        printf "\e[36mDirectory Set!\n\e[39m$modPath\n"
 fi
 
 
