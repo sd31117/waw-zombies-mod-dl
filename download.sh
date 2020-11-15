@@ -56,13 +56,13 @@ printf "\e[36mPlease enter the path to your waw mods folder dir [press enter for
 read modPath
 
 # sets default modpath if not given input by the user
-if [ -z $modPath ]
+if [ -z "$modPath" ]
     then
         modPath="~/.steam/steam/steamapps/compatdata/10090/pfx/drive_c/users/steamuser/Local Settings/Application Data/Activision/CoDWaW/mods/"
-        echo "$modPath"
+        printf "\nNo Directory Set. Using Default\n$modPath\n"
     else
         modPath=$modPath
-        echo "$modPath"
+        printf "\nDirectory Set!\n$modPath\n"
 fi
 
 
