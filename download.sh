@@ -32,7 +32,19 @@ printf "\n\e[36mPlease enter a number to select your mod archive type | [1: zip]
 #stores file extension type
 read fileType
 
-printf "\e[36mEnter the url to the archive containg the mod folders you wish to install: \e[0m\n"
+#checks to make sure the user chose a valid option
+if [ "$fileType" = '1' ] || [ "$fileType" = '2' ]
+    then
+        #if the user chose a valid option
+
+        printf "\n\e[36mYou have chosen option ${fileType}\e[0m\n"
+    else
+        #if the user chose an invalid option
+        printf "\n\e[36mWhoops! Try again! Please enter the number 1 or 2 and then press enter:\e[0m\n"
+        read fileType
+fi
+
+printf "\n\e[36mEnter the url to the archive containg the mod folders you wish to install: \e[0m\n"
 
 #stores url to mod archive variable
 read modURL
